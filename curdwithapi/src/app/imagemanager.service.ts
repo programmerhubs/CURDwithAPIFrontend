@@ -8,22 +8,22 @@ import { ImageInfo } from './models/image-info.model';
   providedIn: 'root'
 })
 export class ImagemanagerService {
-  private apiUrl = environment.apiurl+'/Image/';
+  private apiUrl = environment.apiurl+'Image/';
   constructor(private http: HttpClient) { }
   getImages():Observable<ImageInfo[]>
   {
-    return this.http.get<ImageInfo[]>(this.apiUrl+'');
+    return this.http.get<ImageInfo[]>(this.apiUrl+'AllImages');
   }
   PostImages(Image:ImageInfo):Observable<ImageInfo>
   {
-    return this.http.post<ImageInfo>(this.apiUrl+'/Add New',Image);
+    return this.http.post<ImageInfo>(this.apiUrl+'Add New',Image);
   }
   UpdateImage(id:number,image:ImageInfo):Observable<ImageInfo>
   {
-    return this.http.put<ImageInfo>(this.apiUrl+'/'+id,image);
+    return this.http.put<ImageInfo>(this.apiUrl+'UpdateImage/'+id,image);
   }
   DeleteImage(id:number): Observable<void>
   {
-    return this.http.delete<void>(this.apiUrl+'/'+id);
+    return this.http.delete<void>(this.apiUrl+'DeleteImage/'+id);
   }
 }

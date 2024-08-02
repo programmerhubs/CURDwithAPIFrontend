@@ -1,18 +1,17 @@
 export interface ImageInfo {
-    Id: number;
-    User: String;
-    DateCreated: Date;
-    Description: String;
-    Url: String;
+    id: number;
+    name: String;
+    createdOn: Date;
+    description: String;
+    url: String;
 }
 export class ImageInfo {
    
-   constructor(Id: number,
-    User: String,
-    DateCreated: Date,
-    Description: String,
-    Url: String) {
-   
+   constructor(id: number,
+    name: String,
+    createdOn: Date,
+    description: String,
+    url: String) {
 
    } 
 }
